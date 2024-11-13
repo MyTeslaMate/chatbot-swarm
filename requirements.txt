@@ -1,0 +1,9 @@
+qdrant-client
+openai
+git+https://github.com/openai/swarm.git
+stripe
+psycopg2
+grafana_api
+pandas
+uvicorn[standard]
+fastapi

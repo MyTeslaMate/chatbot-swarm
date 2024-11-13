@@ -1,0 +1,31 @@
+version: '3.4'
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.3.0
+    restart: on-failure
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+  
+  bot:
+    image: bot
+    build: .
+    restart: on-failure
+    volumes:
+        - .:/code/
+        - ~/.kube/:/root/.kube/
+    environment:
+      ARGOCD_TOKEN: ${ARGOCD_TOKEN}
+      ARGOCD_HOST: ${ARGOCD_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      GRAFANA_USER: ${GRAFANA_USER}
+      GRAFANA_PASSWORD: ${GRAFANA_PASSWORD}
+      GRAFANA_HOST: ${GRAFANA_HOST}
+      STRIPE_KEY: ${STRIPE_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    ports:
+      - "8000:80"

@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: chatbot-config
+data:
+  ARGOCD_TOKEN: "{{ .Values.keys.ARGOCD_TOKEN }}"
+  ARGOCD_HOST: "{{ .Values.keys.ARGOCD_HOST }}"
+  DB_NAME: "{{ .Values.keys.DB_NAME }}"
+  DB_USERNAME: "{{ .Values.keys.DB_USERNAME }}"
+  DB_PASSWORD: "{{ .Values.keys.DB_PASSWORD }}"
+  DB_HOST: "{{ .Values.keys.DB_HOST }}"
+  DB_PORT: "{{ .Values.keys.DB_PORT }}"
+  GRAFANA_USER: "{{ .Values.keys.GRAFANA_USER }}"
+  GRAFANA_PASSWORD: "{{ .Values.keys.GRAFANA_PASSWORD }}"
+  GRAFANA_HOST: "{{ .Values.keys.GRAFANA_HOST }}"
+  STRIPE_KEY: "{{ .Values.keys.STRIPE_KEY }}"
+  OPENAI_API_KEY: "{{ .Values.keys.OPENAI_API_KEY }}"
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: chatbot-kubectl-secret
+type: Opaque
+data:
+  config: {{ .Values.keys.KUBECTL_CONFIG }}

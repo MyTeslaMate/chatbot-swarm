@@ -1,0 +1,20 @@
+global:
+  image: myrepo/chatbot
+  tag: bot-6b7440e1dbe8b79555dbb6680fb7972a25463559
+
+host: localhost
+
+keys:
+  OPENAI_API_KEY: ""
+  ARGOCD_TOKEN: ""
+  ARGOCD_HOST: "https://myargocd.host"
+  DB_NAME: ""
+  DB_USERNAME: ""
+  DB_PASSWORD: ""
+  DB_HOST: ""
+  DB_PORT: ""
+  GRAFANA_USER: ""
+  GRAFANA_PASSWORD: ""
+  GRAFANA_HOST: "mygrafana.host"
+  STRIPE_KEY: ""
+  KUBECTL_CONFIG: ""
