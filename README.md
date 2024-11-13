@@ -1,7 +1,6 @@
 # Support bot
 
-This example is a customer service bot which includes a user interface agent and a help center agent with several tools.
-This example uses the helper function `run_demo_loop`, which allows us to create an interactive Swarm session.
+This is a customer service bot which includes a user interface agent and agents with several tools.
 
 ## Overview
 
@@ -11,9 +10,8 @@ The support bot consists of 7 main agents:
 2. **Help Center Agent**: Provides detailed help and support using various tools and integrated with a Qdrant VectorDB for documentation retrieval.
 3. **Stripe Agent**: Provides detailed support on stripe: search user by email and cancel a subscription
 4. **Grafana Agent**: Who gives me information of a Grafana user from an email
-5. **ArgoCD Agent**: Who can read the information of a hosted application with its name
+5. **Query agent**: Who knows how to prodiore and execute queries on my postgre. I described 2 tables: users and services
 6. **Kubectl agent**: That knows how to run create and run kubectl commands on my cluster to retrieve logs from a container for example
-7. **Query agent**: Who knows how to prodiore and execute queries on my postgre. I described 2 tables: users and services
 
 ## Setup
 
